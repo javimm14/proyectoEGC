@@ -50,29 +50,55 @@ include_once 'variables.php';
                            	class="btn btn-info"/>
 	</div>
   </div>
+  <script>  
+(function(d,s,id) {  
+    var js, fjs = d.getElementsByTagName(s)[0];  
+    if(d.getElementById(id)) return;  
+    js = d.createElement(s); js.id = id;  
+    js.src = "http://connect.facebook.net/es_ES/sdk.js";  
+    fjs.parentNode.insertBefore(js, fjs);  
+}(document, 'script', 'facebook-jssdk'));  
+window.fbAsyncInit = function() {  
+    FB.init({  
+        appId    : '1397778220293599',  
+        cookie   : true,  
+        xfbml    : true,
+        app_secret : 'fa6bbdd0b76d6e7778ed5e7f52a519f5',
+        version  : 'v2.0'  
+    });  
+}  
+</script> 
+  <div>
   <div class="col-md-4">
-  	<div class="loginNotDNIe">
-		<h1 style="font-size: 40px;">Entrar sin DNIe</h1>
-		<input  onClick="location.href = 'loginNotDNIe.php' "
-                            id="loginNotDNIe" 
+  	<div class="loginDNIe">
+		<h1 style="font-size: 40px;">Entrar con Facebook</h1>
+		<fb:login-button scope="public_profile,email" onlogin="validarUsuario();"></fb:login-button>
+	</div>
+  </div>
+   
+  	
+  </div>
+        
+   <div class="col-md-4">
+  	<div class="loginDNIe">
+		<h1 style="font-size: 40px;">Entrar con Linkedlin</h1>
+		<input  onClick="location.href = 'loginGoogle.php' "
+                            id="loginDNIe" 
                             type="button"
                             value ="Entra" 
                            	class="btn btn-info"/>
 	</div>
-  </div>
-  
-  <div class="col-md-4">
-  	<div class="register">
-		<h1 style="font-size: 40px;">¿Aún no te has registrado?</h1>
+  </div> 
+    </div>   
+  <div class="row">
+    <div class="center"><div class="register">
+		<h1 style="font-size: 40px;">Tambien puedes registrarte rapidamente</h1>
 		<input  onClick="location.href = 'register.php' "
                             id="register" 
                             type="button"
                             value ="Registrate" 
                            	class="btn btn-info"/>
-	</div>
-  </div>
-</div>
-	
-	
-</body>
+	</div></div></div>
+    </body>
+    
 </html>
